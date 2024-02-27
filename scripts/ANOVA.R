@@ -15,8 +15,12 @@ Frogs <- Frogs %>%
   drop_na(days)
 
 # Linear Model:
-lsmodel_Frog <- lm(temperature ~ days, data=Frogs)
+lsmodel_Frog <- lm(days ~ temperature, data=Frogs)
 summary(lsmodel_Frog)
 
 anova(lsmodel_Frog)
 
+broom::tidy(lsmodel_Frog, conf.int=T)
+
+# Plot of Linear Model:
+plot(lsmodel_Frog)

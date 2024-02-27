@@ -1,1 +1,1 @@
-print("HELLOW")
+Frogs <- read_csv(here("data", "frogs_messy_data.csv"))

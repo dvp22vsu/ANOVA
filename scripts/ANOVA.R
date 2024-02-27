@@ -13,3 +13,10 @@ Frogs <- Frogs %>%
          Frogspawn_ID = `Frogspawn sample id`) %>% 
   pivot_longer(`13`:`25`, names_to="temperature", values_to="days") %>%
   drop_na(days)
+
+# Linear Model:
+lsmodel_Frog <- lm(temperature ~ days, data=Frogs)
+summary(lsmodel_Frog)
+
+anova(lsmodel_Frog)
+
